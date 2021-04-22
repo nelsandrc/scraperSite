@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>About Us</title>
+<title>State Search</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -46,44 +46,33 @@
         </div>
     </div>
 
-    <!-- First Grid -->
-    <div class="w3-row-padding w3-padding-64 w3-container">
-        <div class="w3-content">
-            <div class="w3-twothird">
-                <h1>Team Covid@Stout</h1>
-                <h3>Mission</h3>
-                <p class="w3-text-grey">Thank you for checking out our website. 
-                    We are a team of seniors in the computer science program at UW-Stout who wanted to create an easy to use and understand platform for people to see the spread of COVID-19. 
-                </p>
-                <h3>How It Works</h3>
-                <p class="w3-text-grey">This website was built by four seniors for our capstone project. Using JavaScript code running in an AWS cloud instance, we automatically collect our data from various sources once or more a week. 
-                    This new data is then sent to our MySQL database which is also running in AWS. The database is queried by a Splunk instance which then generates the visualizations you can see on the main page.
-                    Finally, these reports are exported to the website which is running in AWS Amplify. The entire process is automated and will continue to run as long as the code is hosted and the data sources continue publishing new information. 
-                </p>
-            </div>
+    <div class="w3-container w3-center" style="padding: 70px 0" >
+        <h2>STATE SEARCH</h2>
+        <h3 class="w3-text-grey">Click on State for State-level Report</h3>
+      </div>
 
-            <div class="w3-third w3-center">
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-    </footer>
+    <div class="w3-container w3-center " style="padding: 10px 0" id="buttons">
+       
+    </div>    
 
     <script>
-        // Used to toggle the menu on small screens when clicking on the menu button
-        function myFunction() {
-            var x = document.getElementById("navDemo");
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
+        var states = ["Alabama", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota",  "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
+        var text = "";
+        var i;
+        for (i = 0; i < states.length; i++){
+            var linkText = states[i] + ".html";
+            var link = document.createElement("a");
+            var button = document.createElement("button");
+            link.setAttribute('href', linkText);
+            button.innerHTML = states[i];
+            button.className = "w3-button w3-black";
+            button.id = states[i];
+
+            link.innerHTML = button.outerHTML;
+            var buttonDiv = document.getElementById("buttons");
+            buttonDiv.appendChild(link);
         }
     </script>
+ 
 
-</body>
-
-</html>
+   
