@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>State Search</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,h1,h2,h3,h4,h5,h6 {
+        font-family: "Lato", sans-serif
+    }
+
+    .w3-bar,
+    h1,
+    button {
+        font-family: "Montserrat", sans-serif
+    }
+
+    .fa-anchor,
+    .fa-coffee {
+        font-size: 200px
+    }
+</style>
+
+<script>
+    let links = {
+        State: 'Deleware',
+        CurrentEmployment: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FDelaware%2520Current%2520Unemployment&oid=3XHjUZHRs2TEKjmStmp5xwIzBS9FzyEQrVEQJ%5EEsGU_hTAXngqTv_xSCg_3OR08BFC7FWxIqGMRQdPK1ein6hgbnIOk6PBAJT472dAx8HQjUjtquhHdsPXtcO0%5EivBjlpqVsmtW2CFARzErlcoV2G3z%5E3XA4SYEm',
+        DailyCases: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FDelaware%2520Daily%2520Cases&oid=QVwhECgg_ya7lXhx%5E7CJXm6gqnBXVEYqPxdE5Vg0IjWj7ikJxxu_BvZtCNolrl24pQpM79sGeZVQk6yAFArRdeFFJWf67UVyQrxhOVLgG5SbkkHXMV0s_8gEkWmpSFGlAKJXupmzILwuTUlmeo',
+        DailyDeaths: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FDelaware%2520Daily%2520Deaths&oid=wQYEgQzsXVGm6y9i97M_XZD1AtGrzf1%5EIreHh1LJPv4qdEF1RvKAw%5EugDzgxMfQVzMtv_rJ%5EEkgIv7BiCIwMAabaJpTDhKsIGtixH_lnKVKE0sSeoIWAGIPIOtqeHMaO7Nwm4DUX_pXjVGkZzjqFbjfl',
+        PreEmployment: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FDelaware%2520Precovid%2520Unemployment&oid=dJ1rG7ipwbSJt_BzzQT8OsRURAxZYNrzDc43kww3b1ezhDzUJpSrddSt9s2IhE9s7EGsRakrjMQ7G013eQwjmmPQKENs6yBuPTdJFxrNSIBUFNdg32xLnH0nBeXfY6XmWKaosOdV8BSIjsKu_u0Ll2iD7xo',
+        TotalCases: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FDelaware%2520Total%2520Confirmed%2520Cases&oid=oXymF3edM0fnDyheZHvaoFTtXN4j370AR_CMvUgfo5Kn52ZzcDhG3ZvOYuN92ODDKzuVV05a4oT3QiwtGLLgdHGLuyeaB%5E92Ru7d7Xg_bDO4zSvkM1yKiYRNYO2mRaq03Yb2aRnNQjxS4cybOymERUshb6yzCk2h',
+        TotalDeaths: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FDelaware%2520Total%2520Deaths&oid=HAu98nE7HOQvpXwwLZRQckeoiJbaOOtacsKVGCL0w5NPS6PwXOhboLzQFp2oLRCI8JngAVAp1bbvdZmpb7xt%5E1ZUQItawNX0EUAWJV6tMkW2gzydeOPTT%5EvXA5dyLRfUB0Wu%5EWi9zy8CaqAw', }
+
+</script>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-teal w3-card w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-teal"
+                href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                    class="fa fa-bars"></i></a>
+            <a href="../index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+            <a href="../about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About Us</a>
+            <a href="../StateSearch.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">State Search</a>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+        </div>
+    </div>
+
+
+    <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-auto">
+          <div class="w3-container">
+              <!-- Title of State-->
+            <h1 id="Title"></h1>
+            <script>
+                document.getElementById('Title').innerHTML = links['State'];
+            </script>
+            <!--Total death and case count-->
+             <div class="w3-container w3-cell w3-row">
+              <iframe id='TotalDeath' height="170" width="960" frameborder="0" ></iframe> 
+              <iframe id="TotalCase" height="170" width="960" frameborder="0" ></iframe> 
+            </div>
+            <script>
+                document.getElementById('TotalDeath').setAttribute("src",links['TotalDeaths']);
+                document.getElementById('TotalCase').setAttribute('src', links['TotalCases']);
+            </script>
+
+            <h3>Ongoing Cases</h3>
+            <div class="w3-cell-row w3-topbar">
+              <h5 class="w3-padding-32">These graphs are updated weekly to show the ongoing spread of COVID. 
+                While vaccinations are rolling out at an increasing rate, we're not out of the woods yet and we hope these figures will serve as a reminder to stay safe and practice the correct safety precautions.</h5>
+            </div>
+            <div class="w3-cell-row w3-bottombar">
+              <div class="w3-container w3-cell">
+                <!--Weekly case count-->
+                <iframe id="DailyCase" height="350" width="500" frameborder="0"></iframe>
+              </div>
+              <div class="w3-container w3-cell">
+                <!--Weekly death count-->
+                <iframe id="DailyDeath" height="350" width="500" frameborder="0"></iframe>
+              </div>
+
+              <script>
+                  document.getElementById('DailyCase').setAttribute("src", links['DailyCases']);
+                  document.getElementById('DailyDeath').setAttribute('src', links['DailyDeaths']);
+              </script>
+
+            </div>
+            <h3>Economic Impact</h3>
+            <div class="w3-cell-row w3-topbar">
+              <h5 class="w3-padding-32">Beyond the human impact of the pandemic, COVID-19 has clearly impacted the economy and its effects will be felt for years to come. 
+                Years of recovery from the 2008 recession have been undone and the country faces higher unemployement than it has in half a decade.</h5>
+            </div>
+            <div class="w3-cell-row">
+              <div class="w3-container w3-cell">
+                <!--Pre-unemployment-->
+                <iframe id="PreEmployment" height="160" width="480" frameborder="0" ></iframe>
+              </div>
+              <div class="w3-container w3-cell w3-cell-middle">
+                <!--Post-Unemployment-->
+                <iframe id="CurrentEmployment" height="160" width="480" frameborder="0" ></iframe>
+              </div>
+
+              <script>
+                  document.getElementById("PreEmployment").setAttribute("src", links["PreEmployment"]);
+                  document.getElementById("CurrentEmployment").setAttribute("src", links["CurrentEmployment"]);
+              </script>
+
+            </div>
+            <div class="w3-cell-row w3-bottombar">
+              <div class="w3-container w3-cell w3-cell-middle">
+                <!--Unemployment Graph-->
+              </div>
+            </div>
+           
+    
+          <div class="w3-third w3-center" style="">
+          </div>
+        </div>
+      </div>
+    
+    
+      <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+        <h1 class="w3-margin w3-xlarge">Team COVID</h1>
+      </div>
+    
+      <!-- Footer -->
+      <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+      </footer>
+    
+      <script>
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+          var x = document.getElementById("navDemo");
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          } else {
+            x.className = x.className.replace(" w3-show", "");
+          }
+        }
+      </script>
+    
+    </body>
