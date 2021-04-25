@@ -26,13 +26,13 @@
 
 <script>
     let links = {
-        State: '',
-        CurrentEmployment: '',
-        DailyCases: '',
-        DailyDeaths: '',
-        PreEmployment: '',
-        TotalCases: '',
-        TotalDeaths: '', }
+        State: 'Wyoming',
+        CurrentEmployment: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FWyoming%2520Current%2520Unemployment&oid=lgMnWHjiQci8BoerqnogvAXUrzbV0UMTe22W06bNB2PQ51Kesqm_yFfeva_YJPM_eaQNp6XYR10TZeB9EjrPQUFwYgkVLWAzSFBmGykSrfG9BqWIcvqPPN_PzKpb6R6PtihuczUuA0cDxlEtbAVdSonEWYmm5F',
+        DailyCases: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FWyoming%2520Daily%2520Cases&oid=1gYRi59tJeAqAhwBVgtElRh6UNuCF_cMO4PG2YSFygctS0%5EE8fPVN1HPliGv_cMNfzhoiF_6ikttnK8ep7Xq972xacfzx0oXv2XEShAYyZ0EhhKv_UJyDr3q8s61wyVEkDNjj9pbNZOYm8r',
+        DailyDeaths: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FWyoming%2520Daily%2520Deaths&oid=UbE_GF2S68EXDOTxAWVHh_J42OZE31FSWswyuqcQt2VWNWQmDP9mUyrqvfNoH_ca4AYlXBCi%5EvPPoAuD0vDSXRYOkwUVPy9sVfYGO9JkSfSdqTdvB21HDtiCBWJytWB8Hb5M2CmF1MDSl3cCUhqR',
+        PreEmployment: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FWyoming%2520Precovid%2520Unemployment&oid=SsvrJ42I98raUdbtWFJOm8O385wgPaJgX5yhwGsAlh0M86F47etsCG3zIrUKBsRn1gmz3kcYcruMtCuigEBgiDttOshCtq_juupuZ5K9v7tApl4k2Z%5E6d8DH9j2rGdaaC8qDmaP7MY7rrdIgn8G9ifUwA5c2NsS',
+        TotalCases: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FWyoming%2520Total%2520Confirmed%2520Cases&oid=kumQ4Kf3xMjjnZICvCd4qoUId3LhMpYeKOb6Fkkyijy8Uz0fgQwe1ICRB%5EV1omyMF6o2cj9Pyf0ETtRV79TFKIo3PxCUJPBx2BiYzDuT_2mnkcBYWMs10q9VkZIOAtq6E0bq6iJe7Slo7i1vkMCKk306oC',
+        TotalDeaths: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FWyoming%2520Total%2520Deaths&oid=8l%5EHbbdVAwSImE0stYsATlS1Zp409Ig0CQdKbGarbwMlsHAGh7qX8ADDdWlzwjJluAQyJrvzDfdU_OdTE_7n5lZtSbdCQyiU7FcD1qLl3hKzp7pICKURQe5CY4PgxhglJUJEBoI4brZZ%5E_ZQjB3qry7', }
 
 </script>
 
@@ -82,7 +82,7 @@
               <h5 class="w3-padding-32">These graphs are updated weekly to show the ongoing spread of COVID. 
                 While vaccinations are rolling out at an increasing rate, we're not out of the woods yet and we hope these figures will serve as a reminder to stay safe and practice the correct safety precautions.</h5>
             </div>
-            <div class="w3-cell-row w3-bottombar">s
+            <div class="w3-cell-row w3-bottombar">
               <div class="w3-container w3-cell">
                 <!--Weekly case count-->
                 <iframe id="DailyCase" height="350" width="500" frameborder="0"></iframe>
@@ -119,6 +119,7 @@
               </script>
 
             </div>
+            
             <div class="w3-cell-row w3-bottombar">
               <div class="w3-container w3-cell w3-cell-middle">
                 <!--Unemployment Graph-->

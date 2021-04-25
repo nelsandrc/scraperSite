@@ -27,12 +27,12 @@
 <script>
     let links = {
         State: 'Arkansas',
-        CurrentEmployment: '',
-        DailyCases: '',
-        DailyDeaths: '',
-        PreEmployment: '',
-        TotalCases: '',
-        TotalDeaths: '',
+        CurrentEmployment: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FArkansas%2520Current%2520Unemployment&oid=g_zUhQBeD3FdS2oirsfO94brVeaBU2SH0reqvKf7CrB3K%5E6vp%5EBzk2%5EQt2tyT51Yw3EvsEuxes15n6UxC6oIE5dO44FZEQtevplSzz0bMVh6Ox8rVFprGH58jY90Q_8ncREvLzLQIQ%5EUUosyQgw%5ECPf8nlFlEo',
+        DailyCases: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FArkansas%2520Daily%2520Cases&oid=kqLD3ADfCBbYkIUM0aUCtRWjOaX7_TzN4hcrps4ZoSAcHs2mDM%5ExsN0oNlptm1XqxlrGckmTEwnaOJg9rr3he45pHygPLD2tiwSjnKzvQHkBjNyUB%5EK3r9IVI7rLnrR_%5ENYm1w0ILSCzzYpgut0',
+        DailyDeaths: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FArkansas%2520Daily%2520Deaths&oid=f4laY7ozMbUshhVoaOSiHfHz%5EL3ijSqRmkTa8QsK4tSOsP6KpJBkvIJOSGDmFsPtpT1bSBfuUiRuHwlUufckU98FlnVqzoDI_xd2oCoRU0iLI2sroQXjwqdq9hVl0ULaLS3TSYFddbKageSJ%5EF',
+        PreEmployment: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FArkansas%2520Precovid%2520Unemployment&oid=UxsmPOmy9GU6JwIkDrhckHUult935qGhU004jvbsnT0%5ESSXTx2UzDyXz6HqiKycglvtwfReC0Qzyrn8DAp9BqLYBeYIVOhCBYxtKE3U2qlUcCchTFK%5ERBDAdLLG06HQnLZ04E31u6T7Bbg4XhpAyvc7bjONThUC8fcF',
+        TotalCases: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FArkansas%2520Total%2520Confirmed%2520Cases&oid=BjYluth7xPYuAvYlm5f3zPe0tx7FV6n%5E%5EEccFrdhj50_f1pgqsuX1i7nG2B21qLTjioTEKr%5Eav7V_0IrRb_bp3bdddOJAyaluPYtAm2gfMOW9kdURA8mxHIWW70E%5EnO4mshRARhhOYwx%5E73qaFCZP1SmW9DHj6fgKC',
+        TotalDeaths: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FArkansas%2520Total%2520Deaths&oid=N5wo4ovS0YTzvJQDKoR3K5a2VD7ekyceuZe8kllmlki87brZGPvyPbjoSjwgULEgBNmPvyrfv7Xrji5fPz18VDG6IoTJFfQ7yA8Q6tlwrAEi52_TT%5Eem4JHDMze3dO%5EPf6hubSESev8WEBijIlYV1o',
     }
 
 </script>
@@ -120,6 +120,28 @@
               </script>
 
             </div>
+            <div class="w3-container w3-center " style="padding: 10px 0" id="buttons">
+       
+            </div>    
+        
+            <script>
+              var states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii" ,"Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota",  "Ohio", "Oklahoma", "Oregon", "Pennsylvania" , "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
+              var text = "";
+              var i;
+              for (i = 0; i < states.length; i++){
+                  var linkText = states[i] + ".html";
+                  var link = document.createElement("a");
+                  var button = document.createElement("button");
+                  link.setAttribute('href', linkText);
+                  button.innerHTML = states[i];
+                  button.className = "w3-button w3-teal";
+                  button.id = states[i];
+      
+                  link.innerHTML = button.outerHTML;
+                  var buttonDiv = document.getElementById("buttons");
+                  buttonDiv.appendChild(link);
+              }
+          </script>
             <div class="w3-cell-row w3-bottombar">
               <div class="w3-container w3-cell w3-cell-middle">
                 <!--Unemployment Graph-->

@@ -29,8 +29,8 @@
         State: 'Connecticut',
         CurrentEmployment: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FConnecticut%2520Current%2520Unemployment&oid=SBdqKus9L09lZEw_aEQiopQhxkDOF_TK1BvgNKsABHFCBj2_v6We256vJvQYzrTdf279mqczwNMaBWOAmBLSKYwx8OSjfc9RLiBwzfaLhsWllIIvBJhPZ6VsuUWFG17o7Zxg3yVhHupYlWfdElSejk6HvuSeCC',
         DailyCases: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FConnecticut%2520Daily%2520Cases&oid=83VUZm2Jln1u_DIoY196eqTgf378V3qSSv0xZ4z6pTd_3nqyI837yMoTcp4mb0Cf%5EMpr8dlASLAHFzaCPwnmboXZsui4digHNHLyuxZHC3ZR3ED1ij2khrW4vk_gVcPRw%5EGsqEOlMvBu1BnSZIU8NnN',
-        DailyDeaths: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FConnecticut%2520Precovid%2520Unemployment&oid=tUvgpj0rRzo%5EAUDM1C3z2dFUA59TIS84FSieeQk7KsB3EtVxP56JhfFxzgbyC4LrvwcrSx4dd3XYuJuksF770f%5E6s%5ExrMExJKtlv4z230%5EtzxLQo7wcJBC72%5EvbcPtjsUDKUuCJGYX0WR_btqZWSlMlytAxubAr',
-        PreEmployment: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FConnecticut%2520Precovid%2520Unemployment&oid=tUvgpj0rRzo%5EAUDM1C3z2dFUA59TIS84FSieeQk7KsB3EtVxP56JhfFxzgbyC4LrvwcrSx4dd3XYuJuksF770f%5E6s%5ExrMExJKtlv4z230%5EtzxLQo7wcJBC72%5EvbcPtjsUDKUuCJGYX0WR_btqZWSlMlytAxubAr',
+        DailyDeaths: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FConnecticut%2520Daily%2520Deaths&oid=3Caa0zxWWriRnT38ogYivA9Voj_OGsgUQ7AV%5Eu8G_rfhL7hATHGBf9oF%5EY4VDg_qsn6_UJK8vujpN8cBiere19OA%5EMkV3iaYEmCw9Q3CiHaxedHTnvei099BT_kaesrke8Y2IEiHgsO7%5E0V8ZU9n',
+        PreEmployment: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FConnecticut%2520Precovid%2520Unemployment&oid=i5e5sg1d%5EMG6fxLw9Lah2qW4KvhXLknQPfrUVFuT7gj98dvxWeYN9mTr4AgyP85lMBNVUxndpP7mczn4P_wMxfoMsImoKovdTUpu4YmTJN7Iv_G3LVR3974IEJf6rv5IOJUwivxzJasWQvtLiC3nKlvJkE99uus2bYRgjC',
         TotalCases: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FConnecticut%2520Total%2520Confirmed%2520Cases&oid=ESmKidokFjVQ01mH8wMOway7xtDJ3xzBMDeQPiYHvYBmuybCWirY1zP_R9dA4BAb7DHPiqiXOHj1En1i3DCmOBAtwEaNvpPMvjwFR6t7sSLTOM6_vEgICRu4GZOX3Hf69CYcU_DPV%5ERGkzXL_gAaxtaqvgf8f2lf7GL',
         TotalDeaths: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FConnecticut%2520Total%2520Deaths&oid=83OHWK8AdaE7j8rDST3EbgjxRlhR6fD9EZ6n1NKfdn9SD5RdWIExYzIC5jy6wuxIDsi6nUMrtpWoWDLlMEmxNwJ2ljvGGN84XnX%5EyjtSCnLFGKlZDIpu22lAcXwuoly8Xfo_oid5DOxaTjzV28KXD4Y', }
 
@@ -119,6 +119,28 @@
               </script>
 
             </div>
+            <div class="w3-container w3-center " style="padding: 10px 0" id="buttons">
+       
+            </div>    
+        
+            <script>
+              var states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii" ,"Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota",  "Ohio", "Oklahoma", "Oregon", "Pennsylvania" , "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
+              var text = "";
+              var i;
+              for (i = 0; i < states.length; i++){
+                  var linkText = states[i] + ".html";
+                  var link = document.createElement("a");
+                  var button = document.createElement("button");
+                  link.setAttribute('href', linkText);
+                  button.innerHTML = states[i];
+                  button.className = "w3-button w3-teal";
+                  button.id = states[i];
+      
+                  link.innerHTML = button.outerHTML;
+                  var buttonDiv = document.getElementById("buttons");
+                  buttonDiv.appendChild(link);
+              }
+          </script>
             <div class="w3-cell-row w3-bottombar">
               <div class="w3-container w3-cell w3-cell-middle">
                 <!--Unemployment Graph-->

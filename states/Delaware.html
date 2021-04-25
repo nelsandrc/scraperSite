@@ -26,7 +26,7 @@
 
 <script>
     let links = {
-        State: 'Deleware',
+        State: 'Delaware',
         CurrentEmployment: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FDelaware%2520Current%2520Unemployment&oid=3XHjUZHRs2TEKjmStmp5xwIzBS9FzyEQrVEQJ%5EEsGU_hTAXngqTv_xSCg_3OR08BFC7FWxIqGMRQdPK1ein6hgbnIOk6PBAJT472dAx8HQjUjtquhHdsPXtcO0%5EivBjlpqVsmtW2CFARzErlcoV2G3z%5E3XA4SYEm',
         DailyCases: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FDelaware%2520Daily%2520Cases&oid=QVwhECgg_ya7lXhx%5E7CJXm6gqnBXVEYqPxdE5Vg0IjWj7ikJxxu_BvZtCNolrl24pQpM79sGeZVQk6yAFArRdeFFJWf67UVyQrxhOVLgG5SbkkHXMV0s_8gEkWmpSFGlAKJXupmzILwuTUlmeo',
         DailyDeaths: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FDelaware%2520Daily%2520Deaths&oid=wQYEgQzsXVGm6y9i97M_XZD1AtGrzf1%5EIreHh1LJPv4qdEF1RvKAw%5EugDzgxMfQVzMtv_rJ%5EEkgIv7BiCIwMAabaJpTDhKsIGtixH_lnKVKE0sSeoIWAGIPIOtqeHMaO7Nwm4DUX_pXjVGkZzjqFbjfl',
@@ -119,6 +119,28 @@
               </script>
 
             </div>
+            <div class="w3-container w3-center " style="padding: 10px 0" id="buttons">
+       
+            </div>    
+        
+            <script>
+              var states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii" ,"Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota",  "Ohio", "Oklahoma", "Oregon", "Pennsylvania" , "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
+              var text = "";
+              var i;
+              for (i = 0; i < states.length; i++){
+                  var linkText = states[i] + ".html";
+                  var link = document.createElement("a");
+                  var button = document.createElement("button");
+                  link.setAttribute('href', linkText);
+                  button.innerHTML = states[i];
+                  button.className = "w3-button w3-teal";
+                  button.id = states[i];
+      
+                  link.innerHTML = button.outerHTML;
+                  var buttonDiv = document.getElementById("buttons");
+                  buttonDiv.appendChild(link);
+              }
+          </script>
             <div class="w3-cell-row w3-bottombar">
               <div class="w3-container w3-cell w3-cell-middle">
                 <!--Unemployment Graph-->
