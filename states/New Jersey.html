@@ -26,13 +26,13 @@
 
 <script>
     let links = {
-        State: '',
-        CurrentEmployment: '',
-        DailyCases: '',
-        DailyDeaths: '',
-        PreEmployment: '',
-        TotalCases: '',
-        TotalDeaths: '', }
+        State: 'New Jersey',
+        CurrentEmployment: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FNew%2520Jersey%2520Current%2520Unemployment&oid=pV2K9eeVUj8Hi6nqJNcwRJYiFELEJTyZk2gKpcQh6PBHHO9vgmLaIxb9yEN%5E22p6_TLgsrU4HE3qlnNDIt8OjE6axqVolxIUxsrfr9ICINq0N6HTlp_U4nY%5EdnGzld5dcqdq_0YRIlK8r7apAh8PyEh7BSfIiaArrxXl',
+        DailyCases: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FNew%2520Jersey%2520Daily%2520Cases&oid=LUahIQprkpbF2AWOEAAbQ9Yrcb2t7sXAjevAb5F1ERtrfDx8bJwziTk5syry97hEJAGDTdUr3au2hn91XpTcHOHmMbvWqz6ftZN%5Ey6AyjGWzH9SvN542Yg9U5jO9_6ty6_WH6QEQVeGE7uDb331gJU9rDC',
+        DailyDeaths: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FNew%2520Jersey%2520Daily%2520Deaths&oid=bSq_YaUw%5EeimJ8ZB7V9Q7ePEKEDDPVdaxbbbIba_UEHMDbskialhGPtMIODT0ANY2pi4VhAr3oTZUog5wjYvTiffgy%5E1vG5bKzOL%5EgeKLk2Bsntf_7o8LvEclqzMS3HnwipKkD8F53E%5EXxk%5Ep4ufGL0',
+        PreEmployment: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FNew%2520Jersey%2520Precovid%2520unemployment&oid=Ry6iMpT7cRRyRt0gox2A7IOGpjXYL5b0ePCkVNSCHc69kVG4znFy3kYMJg3VfL9vWQ1070bmPLa0tPgAKwUkd5qvIObIXa996OxPpC%5EgUBK1KNNyqyJqSzsa7o8de93WcRnPk063AVQpTScl7SpVTcboa4b2MBmC1F',
+        TotalCases: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FNew%2520Jersey%2520Total%2520Confirmed%2520Cases&oid=2fTMPc4ySx436zjBVuozhpB_v8sDM7aye1nd9_ldqwJ0TXjz2wCIDWziPJNvxyxYXSSQhLyGqdvXLlJIpu8W%5Exg1AOtI0WaJfSvRlwyc6a5ljLvWv9exz6khR0w3oIjysY8XnC0H4HBwaxW0dZ9hNmuWCJP5SUa8qrg8sHo',
+        TotalDeaths: 'http://3.142.41.178:8000/en-US/embed?s=%2FservicesNS%2Fadmin%2Fsearch%2Fsaved%2Fsearches%2FNew%2520Jersey%2520Total%2520Deaths&oid=me9Khp1kmCwjLRyURSPWAQR2GPLhMoQxUm1U8a9X1BVXoI5jNBSvfMm%5EdC7bwICRKGCUGUjW92SDnXhglZ0H9J8FegJlTEed5uu88NVI1Bm1odxrmGHDiy4Km083p86WwMr5OwMeluJmBAnt2UDFNLHE', }
 
 </script>
 
@@ -82,7 +82,7 @@
               <h5 class="w3-padding-32">These graphs are updated weekly to show the ongoing spread of COVID. 
                 While vaccinations are rolling out at an increasing rate, we're not out of the woods yet and we hope these figures will serve as a reminder to stay safe and practice the correct safety precautions.</h5>
             </div>
-            <div class="w3-cell-row w3-bottombar">s
+            <div class="w3-cell-row w3-bottombar">
               <div class="w3-container w3-cell">
                 <!--Weekly case count-->
                 <iframe id="DailyCase" height="350" width="500" frameborder="0"></iframe>
@@ -119,6 +119,28 @@
               </script>
 
             </div>
+            <div class="w3-container w3-center " style="padding: 10px 0" id="buttons">
+       
+            </div>    
+        
+            <script>
+              var states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii" ,"Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota",  "Ohio", "Oklahoma", "Oregon", "Pennsylvania" , "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
+              var text = "";
+              var i;
+              for (i = 0; i < states.length; i++){
+                  var linkText = states[i] + ".html";
+                  var link = document.createElement("a");
+                  var button = document.createElement("button");
+                  link.setAttribute('href', linkText);
+                  button.innerHTML = states[i];
+                  button.className = "w3-button w3-teal";
+                  button.id = states[i];
+      
+                  link.innerHTML = button.outerHTML;
+                  var buttonDiv = document.getElementById("buttons");
+                  buttonDiv.appendChild(link);
+              }
+          </script>
             <div class="w3-cell-row w3-bottombar">
               <div class="w3-container w3-cell w3-cell-middle">
                 <!--Unemployment Graph-->
